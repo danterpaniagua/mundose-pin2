@@ -23,7 +23,7 @@ output "http_connection-mundose-pin2" {
 }
 
 output "sso_start_url" {
-    value = "https://${data.aws_caller_identity.current.account_id}.signin.aws.amazon.com/console?region=${data.aws_region.current.name}"
+  value = "https://${data.aws_caller_identity.current.account_id}.signin.aws.amazon.com/console?region=${data.aws_region.current.name}"
 }
 
 output "ubunutu-ami" {

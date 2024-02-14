@@ -11,6 +11,7 @@ output "user_id" {
 }
 
 output "public_key" {
+  sensitive = true
   value = tls_private_key.pk.private_key_pem
 }
 

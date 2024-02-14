@@ -4,8 +4,8 @@ resource "aws_key_pair" "devkey" {
   public_key = file("./devkey.pub")
 }
 
-resource "local_file" "devkey" {
-  content         = aws_key_pair.devkey.public_key
-  filename        = "./devkey.pub"
-  file_permission = "0600"
-}
+#resource "local_file" "devkey" {
+#  content         = aws_key_pair.devkey.public_key
+#  filename        = "./devkey.pub"
+#  file_permission = "0600"
+#}

@@ -11,7 +11,7 @@ output "user_id" {
 }
 
 output "public_key" {
-  value = aws_key_pair.devkey.public_key
+  value = tls_private_key.example.public_key_openssh
 }
 
 output "ssh_connection-mundose-pin2" {

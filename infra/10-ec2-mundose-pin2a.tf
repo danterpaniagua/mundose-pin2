@@ -6,7 +6,7 @@ resource "aws_instance" "mundose-pin2" {
   associate_public_ip_address = true
   vpc_security_group_ids      = [aws_security_group.main.id]
   iam_instance_profile        = aws_iam_instance_profile.ec2_profile.name
-  key_name                    = aws_key_pair.devkey.key_name
+  key_name                    = aws_key_pair.kp.public_key
 
   tags = {
     Name = "ec2-mundose-pin2"
@@ -14,8 +14,7 @@ resource "aws_instance" "mundose-pin2" {
   user_data = file("../scripts/mundose-pin2.sh")
 
   depends_on = [
-    local_file.devkey,
-    aws_key_pair.devkey,
+    aws_key_pair.kp,
     aws_iam_role.mundose-ec2-admin,
     aws_security_group.main,
   ]
